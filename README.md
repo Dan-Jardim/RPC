@@ -17,4 +17,6 @@ Antes de executar é preciso instalar a biblioteca rpyc:
 
 Uma vez instalada, abra o terminal, va até a pasta do projeto e execute os comandos:
 - Para o servidor: `python MyService.py`
-- Para o cliente: `python Client.py localhost`
+- Para o cliente:
+  - Caso esteja na mesma maquina: `python Client.py localhost`
+  - Caso esteja em maquina diferente: `python Client.py <nome_maquina_servidor>`
