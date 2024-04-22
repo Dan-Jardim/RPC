@@ -1,12 +1,25 @@
 import rpyc
+import time
 
 class MyService(rpyc.Service):
+    
+    def __init__(self):
+        super().__init__()
+        self.start = 0
+        self.end = 0
+    
     # código que é executado quando uma conexão é iniciada, caso seja necessário
     def on_connect(self, conn):
-        self._conn = conn
+        self.start = time.time()
+
+        pass
 
     # código que é executado quando uma conexão é finalizada, caso seja necessário
     def on_disconnect(self, conn):
+        self.end = time.time()
+
+        print(f"Execution time: {self.end - self.start} s.")
+
         pass
 
     # este é um método exposto
