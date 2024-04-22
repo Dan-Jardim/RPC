@@ -25,6 +25,9 @@ class MyService(rpyc.Service):
     # este é um método exposto
     def exposed_get_answer(self):
         return 42
+    
+    def exposed_sum_vector(self, vector):
+        return sum(vector)
 
     # este é um atributo exposto
     exposed_the_real_answer_though = 43
