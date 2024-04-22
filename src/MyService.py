@@ -3,7 +3,7 @@ import rpyc
 class MyService(rpyc.Service):
     # código que é executado quando uma conexão é iniciada, caso seja necessário
     def on_connect(self, conn):
-        pass
+        self._conn = conn
 
     # código que é executado quando uma conexão é finalizada, caso seja necessário
     def on_disconnect(self, conn):
