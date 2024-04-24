@@ -13,12 +13,13 @@ def remote_sum_vector(server, num):
     vect = numpy.random.randint(0, num, num)
 
     conn = rpyc.connect(server, 18861)
+    conn._config['sync_request_timeout'] = None
 
+    
     result = conn.root.sum_vector(vect)
-
+    
     print("Vetor:", vect)
-
-    print(f"Summation = {result}")
+    print("Soma dos elementos:", result)
 
     end = time.time()
 
